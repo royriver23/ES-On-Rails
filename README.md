@@ -12,3 +12,5 @@
 
 - **Searchkick:** recommended for simpler solutions such as search inside a single entity.
 - **Chewy:** Recommend for more advanced and combined with the right abstraction, make it a maintainable solution.
+
+## Include API related best practices
