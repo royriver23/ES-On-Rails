@@ -6,6 +6,8 @@ class CreateEmployees < ActiveRecord::Migration[5.1]
       t.string :identification
       t.boolean :active
       t.text :description
+      t.datetime :birthday
+      t.references :team, foreign_key: true
 
       t.timestamps
     end
