@@ -1,5 +1,6 @@
 /db/structure.sql
-/logs/*
+/log/*
 /spec/tmp/*
 /tmp
 /db/schema.rb
+/.vscode/*
