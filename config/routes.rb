@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :teams do
-    resources :employess, only: [:create]
+    resources :employees, only: %i(create index)
   end
+  resources :employees, except: %i(create index)
 end

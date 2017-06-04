@@ -15,12 +15,13 @@ AllCops:
     - script/**/*
     - public/**/*
     - vendor/**/*
+    - 'Gemfile*'
 
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Lint/EnsureReturn:
   Enabled: false
@@ -51,9 +52,6 @@ Metrics/ModuleLength:
     - spec/**/*_spec.rb # modularized specs are treated like the modules themselves
     - lib/pub_sub/event_types.rb # mandatory lit of all event types
 
-Metrics/ParameterLists:
-  # these files need refactor - additional items should not be added
-
 Performance/StringReplacement:
   Enabled: false
 
@@ -63,8 +61,8 @@ Style/Alias:
 Style/CaseEquality:
   Enabled: false
 
-Style/CaseIndentation:
-  IndentWhenRelativeTo: end
+Layout/CaseIndentation:
+  EnforcedStyle: end
 
 Style/CommentAnnotation:
   Enabled: false
@@ -81,25 +79,25 @@ Style/FrozenStringLiteralComment:
 Style/EmptyCaseCondition:
   Enabled: false
 
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   Enabled: false
 
 Style/IfUnlessModifier:
   Enabled: false
 
-Style/IndentArray:
+Layout/IndentArray:
   Enabled: false
 
 Style/Lambda:
   Enabled: false
 
-Style/MultilineMethodCallBraceLayout:
+Layout/MultilineMethodCallBraceLayout:
   Enabled: false
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Enabled: false
 
 Style/NumericLiterals:
@@ -111,16 +109,16 @@ Style/RedundantReturn:
 Style/SingleLineMethods:
   Enabled: false
 
-Style/SpaceAfterNot:
+Layout/SpaceAfterNot:
   Enabled: false
 
-Style/SpaceAfterComma:
+Layout/SpaceAfterComma:
   Enabled: false
 
-Style/SpaceBeforeBlockBraces:
+Layout/SpaceBeforeBlockBraces:
   Enabled: false
 
-Style/SpaceInsideStringInterpolation:
+Layout/SpaceInsideStringInterpolation:
   Enabled: false
 
 Style/UnlessElse:
