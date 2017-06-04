@@ -1,0 +1,136 @@
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop_rspec.yml
+
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - config.ru
+  Exclude:
+    - bin/*
+    - db/**/*
+    - config/environments/*
+    - script/**/*
+    - public/**/*
+    - vendor/**/*
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Lint/EnsureReturn:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 45 # default is 15, our max is 76, let's meet in the middle to improve
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 11 # default is 6, our max is 16, let's meet in the middle to improve
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 41 # default is 10, our max is 72, let's meet in the middle to improve
+  Exclude:
+    - spec/support/helpers/http_status.rb # large due to defining all HTTP codes
+
+Metrics/ModuleLength:
+  Exclude:
+    - spec/support/**/*.rb # large due to defining all HTTP codes
+    - spec/**/*_spec.rb # modularized specs are treated like the modules themselves
+    - lib/pub_sub/event_types.rb # mandatory lit of all event types
+
+Metrics/ParameterLists:
+  # these files need refactor - additional items should not be added
+
+Performance/StringReplacement:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/CaseEquality:
+  Enabled: false
+
+Style/CaseIndentation:
+  IndentWhenRelativeTo: end
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/FirstParameterIndentation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/IndentArray:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/MultilineMethodCallBraceLayout:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/SingleLineMethods:
+  Enabled: false
+
+Style/SpaceAfterNot:
+  Enabled: false
+
+Style/SpaceAfterComma:
+  Enabled: false
+
+Style/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Style/SpaceInsideStringInterpolation:
+  Enabled: false
+
+Style/UnlessElse:
+  Enabled: false
+
+Style/WhileUntilModifier:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/ZeroLengthPredicate:
+  AutoCorrect: false # throwing error when attempting auto-correct
