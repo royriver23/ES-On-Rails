@@ -1,5 +1,6 @@
+# In charge of specifying status codes for different errors
+# see: http://billpatrianakos.me/blog/2013/10/13/list-of-rails-status-code-symbols/
 module ExceptionHandler
-  # provides the more graceful `included` method
   extend ActiveSupport::Concern
 
   included do
