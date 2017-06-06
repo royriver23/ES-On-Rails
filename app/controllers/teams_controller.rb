@@ -1,9 +1,10 @@
 class TeamsController < ApplicationController
+  include Searchable
 
   # GET /teams
   def index
     teams = Team.all
-    json_response teams
+    json_response search(teams)
   end
 
   # POST /teams

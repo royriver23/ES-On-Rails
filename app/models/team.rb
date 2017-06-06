@@ -3,5 +3,5 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
 
-  SEARCH_FIELDS = %i(name).freeze
+  SEARCH_FIELDS = %i(name vision mission).freeze
 end
