@@ -5,7 +5,7 @@ class Teams::EmployeesController < ApplicationController
   # GET /teams/:team_id/employees
   def index
     # json_response search(fetch_team.employees)
-    json_response Employee.where(id: employee_ids)
+    json_response Employee.where(id: employee_ids).order(updated_at: :desc)
   end
 
   # POST /teams/:team_id/employees

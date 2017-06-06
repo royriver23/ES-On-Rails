@@ -1,4 +1,6 @@
 class Employee < ApplicationRecord
+  update_index('employees#employee') { self }
+
   belongs_to :team
   has_many :employee_skills, dependent: :destroy
   has_many :skills, through: :employee_skills

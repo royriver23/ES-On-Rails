@@ -6,6 +6,6 @@ class EmployeeSerializer < ActiveModel::Serializer
   end
 
   def birthday
-    object.birthday.strftime("%B %d, %Y")
+    object.birthday&.strftime("%B %d, %Y")
   end
 end

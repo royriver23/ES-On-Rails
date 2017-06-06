@@ -29,7 +29,8 @@ class EmployeesIndex < ApplicationIndex
     field :employee_skills, value: -> { skills.pluck(:name) }
     field :active, index: 'not_analyzed'
     field :search_data, value: ->(emp) {
-      [emp.first_name, emp.last_name, emp.team.name, emp.team.mission, emp.team.vision, emp.skills.pluck(:name)].flatten.compact
+      [emp.first_name, emp.last_name, emp.team.name, emp.team.mission,
+       emp.team.vision, emp.skills.pluck(:name)].flatten.compact
     }, analyzer: :user_data
   end
 
