@@ -1,0 +1,24 @@
+# config/chewy.yml
+# separate environment configs
+# test:
+#   host: 'localhost:9250'
+#   prefix: 'test'
+# development:
+#   host: 'localhost:9200'
+
+defaults: &defaults
+  randomize_hosts: true # shuffle the list of connections upon arrival to avoid dog piling effect across processes
+  retry_on_failure: 3
+  hosts: 'localhost:9200'
+  request_strategy: 'sidekiq'
+  prefix: company_<%= Rails.env %>
+
+development:
+  <<: *defaults
+test:
+  <<: *defaults
+  use_after_commit_callbacks: false
+production:
+  <<: *defaults
+  hosts: <%= ENV["ELASTICSEARCH_URL"] %>
+  prefix: company

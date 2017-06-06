@@ -20,7 +20,7 @@ module Searchable
   # Basic scenario, single model source
   def search(active_record_relation)
     fields = Array(active_record_relation.model::SEARCH_FIELDS) if defined?(active_record_relation.model::SEARCH_FIELDS)
-    if fields.any? && search_param
+    if fields.present? && search_param
       where_string = fields.map { |field| "#{field} ilike ?" }.join(' OR ')
       active_record_relation.where(where_string, *fields.map { "%#{search_param}%" })
     else

@@ -4,7 +4,8 @@ class Teams::EmployeesController < ApplicationController
 
   # GET /teams/:team_id/employees
   def index
-    json_response search(fetch_team.employees)
+    # json_response search(fetch_team.employees)
+    json_response Employee.where(id: employee_ids)
   end
 
   # POST /teams/:team_id/employees
@@ -17,6 +18,10 @@ class Teams::EmployeesController < ApplicationController
 
   def fetch_team
     Team.find params[:team_id]
+  end
+
+  def employee_ids
+    ::EmployeesIndex.searcher.get_ids(team_id: fetch_team.id, search_text: search_param)
   end
 
 end

@@ -5,4 +5,6 @@ class Employee < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  SEARCH_FIELDS = %i(first_name last_name description).freeze
 end
